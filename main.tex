@@ -38,7 +38,7 @@
 
 % Setting the correct font size for everything
 \usepackage{titlesec}
-\titleformat{\chapter}[block]{\normalfont\Large\bfseries\centering}{\thechapter.}{14pt}{}
+\titleformat{\chapter}[block]{\normalfont\Large\bfseries\centering}{\thechapter.}{14pt}{\MakeUppercase}
 \titleformat*{\section}{\normalfont\normalsize\bfseries}
 \titleformat*{\subsection}{\normalfont\normalsize\bfseries}
 
@@ -49,7 +49,7 @@
 }
 
 % Changes the title of the Table of Contents(ToC)
-\renewcommand{\contentsname}{\MakeUppercase{Contents}}
+\renewcommand{\contentsname}{Contents}
 
 %------------------------------------------------------------
 
@@ -82,7 +82,7 @@
 	\thispagestyle{empty}
 	\begin{center}
 		\vspace*{1mm}
-		\Large{\MakeUppercase{\textbf{\reporttitle}}}\\
+		\Large{\textbf{\reporttitle}}\\
 		\large
 		
 		\vspace{4cm}
@@ -120,7 +120,7 @@
 	\begin{center}
 		\Large
 		\vspace*{0.5cm}
-		\textbf{\MakeUppercase{Certificate}}
+		\textbf{Certificate}
 		\vspace{1cm}
 	\end{center}
 	
@@ -170,10 +170,6 @@
 	\noindent Date: \\
 	\noindent Place: Bengaluru \\
 	
-	% Empty page for some reason
-	\afterpage{\null\newpage}
-	\pagenumbering{gobble}
-	
 	%------------------------------------------------------------
 	% Acknowlegdement page
 	%------------------------------------------------------------
@@ -183,7 +179,7 @@
 	\thispagestyle{plain}
 	
 	\addcontentsline{toc}{chapter}{Acknowledgement}
-	\precursortitle{\MakeUppercase{Acknowledgement}}
+	\precursortitle{Acknowledgement}
 	\vspace{1cm}
 	
 	Put your acknowledgments here (copied from the thesis format, \textbf{MODIFY})...
@@ -210,6 +206,7 @@
 	
 	%------------------------------------------------------------
 	% Tables page
+    % Remove this page if it's not required
 	%------------------------------------------------------------
 	\newpage
 	\addcontentsline{toc}{chapter}{List of Tables}
@@ -217,6 +214,7 @@
 	
 	%------------------------------------------------------------
 	% Figures page
+    % Remove this page if it's not required
 	%------------------------------------------------------------
 	\newpage
 	\addcontentsline{toc}{chapter}{List of Figures}
@@ -227,7 +225,7 @@
 	%------------------------------------------------------------
 	\newpage
 	\addcontentsline{toc}{chapter}{Abstract}
-	\chapter*{\MakeUppercase{Abstract}}
+	\chapter*{Abstract}
 	
 	\singlespacing
 	\hspace*{0.25cm}
@@ -256,30 +254,55 @@
         \doublespacing
         \pagestyle{plain}
 	
-	\chapter{\MakeUppercase{Introduction}}
+	\chapter{Introduction}
 	\section{Section}
 	\subsection{Subsection}
 	\subsubsection{Subsubsection}
+
+    % Please remove these! This is only there to show the \doublespacing
+    \lipsum[100]\\
+
+    \lipsum[50]
 
 	%------------------------------------------------------------
 	% Content chapter 1
 	% Copy this template for new chapters
 	%------------------------------------------------------------
 	
-	\chapter{\MakeUppercase{Some Topic}}
+	\chapter{Some Topic}
 
-	Put in all your content in chapters from here onwards
+	Put all your content in chapters from here onwards. Add chapters as per need
+
+    %------------------------------------------------------------
+	% Content chapter N-1
+	% Copy this template for new chapters
+	%------------------------------------------------------------
+	
+	\chapter{Key Takeaways from the Internship}
+
+	Don't remove this chapter, it's actually required.
+
+ 	%------------------------------------------------------------
+	% Content chapter N
+	% Copy this template for new chapters
+	%------------------------------------------------------------
+	
+	\chapter{Conclusions}
+
+	This is the last numbered chapter in the report.
 
 	%------------------------------------------------------------
 	% Glossary page(s)
 	%------------------------------------------------------------
 	\addcontentsline{toc}{chapter}{Glossary}
-	\chapter*{\MakeUppercase{Glossary}}
+	\chapter*{Glossary}
 
 	%------------------------------------------------------------
 	% Bibliography page(s)
 	%------------------------------------------------------------
 	\addcontentsline{toc}{chapter}{Bibliography}
-	\chapter*{\MakeUppercase{Bibliography}}
+	\chapter*{Bibliography}
+
+    You can use 'bibtex' styling for this. I am not providing this in the template, because it can be a pain sometimes, but that's one of the easiest ways I know of.
 	
 \end{document}
